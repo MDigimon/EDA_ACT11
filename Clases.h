@@ -7,17 +7,21 @@ using namespace std;
 
 class ArregloDinamico{
 	private:
-		int *arreglo;
+		string *arreglo;
 		size_t tam;
 		size_t cont;
 		const static size_t MAX = 5;
 	public:
 		ArregloDinamico();
 		~ArregloDinamico();
-		void insertar_inicio(int v);
-		void insertar_final(int v);
+		void insertar_inicio(const string &s);
+		void insertar_final(const string &s);
 		void expandir();
-		void imprimir();
+		size_t size();
+		
+		string operator[](size_t p){
+			return arreglo[p];
+		}
 };
 
 
